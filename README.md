@@ -11,10 +11,15 @@ dependencies, no framework. Edit a file, commit, done.
 index.html              Home page
 style.css               The whole design system
 policy/babee/index.html Privacy policy for Babee (iOS)
+policy/stint/index.html Privacy policy for Stint (macOS)
+terms/babee/index.html  Terms & disclaimer for Babee
+terms/stint/index.html  Terms & disclaimer for Stint
 ```
 
-Privacy policies live at `policy/<app>/index.html` so each one gets a clean
-`/policy/<app>/` URL. Add a directory per app.
+Legal pages live at `policy/<app>/index.html` and `terms/<app>/index.html`, so
+each one gets a clean `/policy/<app>/` or `/terms/<app>/` URL. Add a directory
+per app. These URLs are what the apps themselves link to and what App Store
+Connect points at, so treat them as permanent once an app has shipped.
 
 ## Running locally
 
