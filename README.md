@@ -14,7 +14,7 @@ style.css               The whole design system
 favicon.svg             Tab icon — the terminal prompt from the design system
 apple-touch-icon.png    180×180 raster of the same mark, for iOS home screens
 robots.txt              Crawler policy; points at the sitemap
-sitemap.xml             All five public URLs
+sitemap.xml             Every public URL — hand-maintained, see Adding a page
 CNAME                   Custom domain for GitHub Pages
 policy/babee/index.html Privacy policy for Babee (iOS)
 policy/stint/index.html Privacy policy for Stint (macOS)
@@ -22,13 +22,60 @@ terms/babee/index.html  Terms & disclaimer for Babee
 terms/stint/index.html  Terms & disclaimer for Stint
 ```
 
-**Adding a page means touching `sitemap.xml` too** — it is hand-maintained, and
-nothing will warn you if it drifts.
-
 Legal pages live at `policy/<app>/index.html` and `terms/<app>/index.html`, so
 each one gets a clean `/policy/<app>/` or `/terms/<app>/` URL. Add a directory
 per app. These URLs are what the apps themselves link to and what App Store
 Connect points at, so treat them as permanent once an app has shipped.
+
+## Adding a page
+
+**`sitemap.xml` is hand-maintained and nothing will warn you if it drifts.**
+There is no build step to catch it, no test, and no error at deploy — a page
+left out is simply invisible to the sitemap, silently and indefinitely. This is
+the step that gets forgotten, so do it as part of adding the page rather than
+afterwards.
+
+1. Create `<dir>/index.html`, copying the `<head>` block from a sibling page and
+   changing `canonical`, `og:title`, `og:description` and `og:url`.
+2. **Add it to `sitemap.xml`:**
+
+   ```xml
+   <url>
+     <loc>https://derekgeorge.org/policy/newapp/</loc>
+     <lastmod>2026-09-10</lastmod>
+     <priority>0.5</priority>
+   </url>
+   ```
+
+   Trailing slash, no `index.html`. `lastmod` is the date you commit, in
+   `YYYY-MM-DD`. Home is `1.0`, legal pages are `0.5`. Update `lastmod` when you
+   materially change a page — a date that never moves teaches crawlers to stop
+   checking.
+3. If it is one of a policy/terms pair, link each to the other in the footer.
+4. Check nothing drifted, in both directions — a page missing from the sitemap
+   and a sitemap entry with no page are both silent failures:
+
+   ```bash
+   python3 - <<'EOF'
+   import re, pathlib
+   BASE = "https://derekgeorge.org/"
+   disk = set()
+   for p in pathlib.Path(".").rglob("index.html"):
+       if ".git" in p.parts: continue
+       d = p.parent.as_posix()
+       disk.add(BASE if d == "." else f"{BASE}{d}/")
+   listed = set(re.findall(r"<loc>([^<]+)</loc>", pathlib.Path("sitemap.xml").read_text()))
+   for u in sorted(disk - listed): print("MISSING FROM SITEMAP:", u)
+   for u in sorted(listed - disk): print("IN SITEMAP, NO FILE: ", u)
+   if disk == listed: print("sitemap matches the pages on disk")
+   EOF
+   ```
+
+**Do not list `404.html`** — it is `noindex` by design and does not belong in a
+sitemap.
+
+You do not need to resubmit to Search Console. The sitemap is registered there
+already, and Google refetches it periodically on its own.
 
 ## Running locally
 
