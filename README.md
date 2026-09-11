@@ -16,9 +16,9 @@ apple-touch-icon.png    180×180 raster of the same mark, for iOS home screens
 robots.txt              Crawler policy; points at the sitemap
 sitemap.xml             Every public URL — hand-maintained, see Adding a page
 CNAME                   Custom domain for GitHub Pages
-policy/babee/index.html Privacy policy for Babee (iOS)
+policy/bunty/index.html Privacy policy for Bunty (iOS)
 policy/stint/index.html Privacy policy for Stint (macOS)
-terms/babee/index.html  Terms & disclaimer for Babee
+terms/bunty/index.html  Terms & disclaimer for Bunty
 terms/stint/index.html  Terms & disclaimer for Stint
 ```
 
