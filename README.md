@@ -19,6 +19,7 @@ CNAME                   Custom domain for GitHub Pages
 policy/bunty/index.html Privacy policy for Bunty (iOS)
 policy/stint/index.html Privacy policy for Stint (macOS)
 terms/bunty/index.html  Terms & disclaimer for Bunty
+help/bunty/index.html   Support page for Bunty (the App Store Support URL)
 terms/stint/index.html  Terms & disclaimer for Stint
 ```
 
