@@ -1,5 +1,11 @@
 # macOS
 .DS_Store
 
-# Claude Code local settings
-.claude/settings.local.json
+# AI-assistant files, kept local
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.claude/
+.mcp.json
+.cursor/
+.gemini/
