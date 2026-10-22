@@ -17,10 +17,8 @@ robots.txt              Crawler policy; points at the sitemap
 sitemap.xml             Every public URL — hand-maintained, see Adding a page
 CNAME                   Custom domain for GitHub Pages
 policy/bunty/index.html Privacy policy for Bunty (iOS)
-policy/stint/index.html Privacy policy for Stint (macOS)
 terms/bunty/index.html  Terms & disclaimer for Bunty
 help/bunty/index.html   Support page for Bunty (the App Store Support URL)
-terms/stint/index.html  Terms & disclaimer for Stint
 ```
 
 Legal pages live at `policy/<app>/index.html` and `terms/<app>/index.html`, so
