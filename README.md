@@ -16,15 +16,7 @@ apple-touch-icon.png    180×180 raster of the same mark, for iOS home screens
 robots.txt              Crawler policy; points at the sitemap
 sitemap.xml             Every public URL — hand-maintained, see Adding a page
 CNAME                   Custom domain for GitHub Pages
-policy/bunty/index.html Privacy policy for Bunty (iOS)
-terms/bunty/index.html  Terms & disclaimer for Bunty
-help/bunty/index.html   Support page for Bunty (the App Store Support URL)
 ```
-
-Legal pages live at `policy/<app>/index.html` and `terms/<app>/index.html`, so
-each one gets a clean `/policy/<app>/` or `/terms/<app>/` URL. Add a directory
-per app. These URLs are what the apps themselves link to and what App Store
-Connect points at, so treat them as permanent once an app has shipped.
 
 ## Adding a page
 
@@ -34,24 +26,24 @@ left out is simply invisible to the sitemap, silently and indefinitely. This is
 the step that gets forgotten, so do it as part of adding the page rather than
 afterwards.
 
-1. Create `<dir>/index.html`, copying the `<head>` block from a sibling page and
-   changing `canonical`, `og:title`, `og:description` and `og:url`.
+1. Create `<dir>/index.html`, so it gets a clean `/<dir>/` URL. Copy the
+   `<head>` block from `index.html` and change `canonical`, `og:title`,
+   `og:description` and `og:url`.
 2. **Add it to `sitemap.xml`:**
 
    ```xml
    <url>
-     <loc>https://derekgeorge.org/policy/newapp/</loc>
-     <lastmod>2026-09-10</lastmod>
+     <loc>https://derekgeorge.org/newpage/</loc>
+     <lastmod>2026-10-22</lastmod>
      <priority>0.5</priority>
    </url>
    ```
 
    Trailing slash, no `index.html`. `lastmod` is the date you commit, in
-   `YYYY-MM-DD`. Home is `1.0`, legal pages are `0.5`. Update `lastmod` when you
+   `YYYY-MM-DD`. Home is `1.0`, other pages `0.5`. Update `lastmod` when you
    materially change a page — a date that never moves teaches crawlers to stop
    checking.
-3. If it is one of a policy/terms pair, link each to the other in the footer.
-4. Check nothing drifted, in both directions — a page missing from the sitemap
+3. Check nothing drifted, in both directions — a page missing from the sitemap
    and a sitemap entry with no page are both silent failures:
 
    ```bash
@@ -109,11 +101,8 @@ screen reader announces "slash slash slug in mono" before every heading.
 
 `.prompt` renders a mono line prefixed with `$ ` and is used once per page, at
 the top. `.eyebrow` is the mono `// slug` label above each heading. Body text is
-`--muted`; `strong` and headings step up to `--ink`.
-
-Long-form pages (the policies) add a few extras: `.doc-head` for the title
-block, `.updated` for the mono datestamp, `.callout` for the summary panel, and
-`footer .note` for a disclaimer in sans rather than the footer's default mono.
+`--muted`; headings step up to `--ink`. `footer .note` sets a footer line in
+sans rather than the footer's default mono, as the copyright line does.
 
 ## Deployment
 
@@ -131,7 +120,7 @@ resolve against `/a/b/c/` and 404 in turn.
 ## Head boilerplate
 
 Every page carries a canonical URL, Open Graph tags, `theme-color`, and links to
-both icons. Copy the block from a sibling page when adding one and change the
+both icons. Copy the block from `index.html` when adding a page and change the
 four values that differ: `canonical`, `og:title`, `og:description`, `og:url`.
 
 There is no `og:image` — a good one needs type set in a real design tool, and a
@@ -141,5 +130,4 @@ description cleanly on its own.
 Keep meta descriptions between 120 and 160 characters; below that search results
 look thin, above it they get truncated.
 
-The homepage additionally carries JSON-LD (`Person` + `WebSite`). The other
-pages do not need it — structured data for a legal document buys nothing.
+The homepage additionally carries JSON-LD (`Person` + `WebSite`).
