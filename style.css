@@ -101,6 +101,19 @@ p:last-child {
   margin-bottom: 0;
 }
 
+ul {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+li {
+  margin-bottom: 0.4rem;
+}
+strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 a {
   color: var(--ink);
   text-decoration: none;
