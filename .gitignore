@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Email signature, kept local so Pages does not publish it
+email-signature.html
+
 # AI-assistant files, kept local
 CLAUDE.md
 CLAUDE.local.md
