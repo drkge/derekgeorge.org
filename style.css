@@ -114,6 +114,55 @@ strong {
   font-weight: 600;
 }
 
+ol {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+/* Screenshots: full width of the column, with a soft frame. */
+.shot {
+  margin: 1.5rem 0;
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+/* Simple data tables, such as pricing. */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+thead th {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+tbody th {
+  font-weight: 500;
+  color: var(--muted);
+}
+td {
+  color: var(--ink);
+}
+
 a {
   color: var(--ink);
   text-decoration: none;
