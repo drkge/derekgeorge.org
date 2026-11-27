@@ -1,6 +1,6 @@
 # derekgeorge.org
 
-Personal site for Derek George — Shopify developer, part-time Apple developer.
+Personal site for Derek George — Shopify theme and app developer.
 
 Hand-written static HTML with a single stylesheet. No build step, no
 dependencies, no framework. Edit a file, commit, done.
@@ -15,6 +15,7 @@ favicon.svg             Tab icon — the terminal prompt from the design system
 apple-touch-icon.png    180×180 raster of the same mark, for iOS home screens
 robots.txt              Crawler policy; points at the sitemap
 sitemap.xml             Every public URL — hand-maintained, see Adding a page
+llms.txt                Plain summary of the site for AI search tools
 CNAME                   Custom domain for GitHub Pages
 ```
 
@@ -130,4 +131,13 @@ description cleanly on its own.
 Keep meta descriptions between 120 and 160 characters; below that search results
 look thin, above it they get truncated.
 
-The homepage additionally carries JSON-LD (`Person` + `WebSite`).
+The homepage additionally carries JSON-LD: `Person`, `WebSite`, `ProfilePage`
+and `FAQPage`. The `FAQPage` questions and answers must match the visible
+Questions section word for word, so change both together. Bump the
+`ProfilePage` `dateModified` alongside the homepage's `lastmod` in the sitemap.
+
+## AI search
+
+`llms.txt` is a short Markdown summary of who Derek is and what each page is
+for, which AI search tools can read instead of parsing the HTML. When you add or
+remove a page, or change how the homepage describes the work, update it too.

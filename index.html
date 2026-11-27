@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Derek George — Shopify &amp; App Developer</title>
+    <title>Derek George — Shopify Theme &amp; App Developer</title>
     <meta
       name="description"
-      content="Derek George — Shopify developer at Wolfdev, building custom themes, apps and third-party API integrations. Part-time Apple app developer and AI enthusiast."
+      content="Derek George is a Shopify theme and app developer, building custom themes, apps and API integrations. Email hello@derekgeorge.org to start a project."
+    />
+    <meta name="author" content="Derek George" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large"
     />
     <link rel="canonical" href="https://derekgeorge.org/" />
     <link rel="stylesheet" href="style.css" />
@@ -14,14 +19,20 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#fff7fa" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="derekgeorge.org" />
-    <meta property="og:title" content="Derek George — Shopify &amp; App Developer" />
+    <meta property="og:locale" content="en_GB" />
+    <meta
+      property="og:title"
+      content="Derek George — Shopify Theme &amp; App Developer"
+    />
     <meta
       property="og:description"
-      content="Shopify developer at Wolfdev, building custom themes, apps and third-party API integrations. Part-time Apple app developer."
+      content="Custom Shopify themes, apps and third-party API integrations. Email hello@derekgeorge.org to start a project."
     />
     <meta property="og:url" content="https://derekgeorge.org/" />
+    <meta property="profile:first_name" content="Derek" />
+    <meta property="profile:last_name" content="George" />
     <meta name="twitter:card" content="summary" />
 
     <script type="application/ld+json">
@@ -33,21 +44,81 @@
             "@id": "https://derekgeorge.org/#derek",
             "name": "Derek George",
             "url": "https://derekgeorge.org/",
-            "jobTitle": "Shopify Developer",
-            "sameAs": ["https://wolfdev.co.uk"],
+            "email": "hello@derekgeorge.org",
+            "jobTitle": "Shopify Theme & App Developer",
+            "description": "Shopify theme and app developer building custom Shopify themes, Shopify apps and third-party API integrations.",
             "knowsAbout": [
               "Shopify",
               "Shopify theme development",
               "Shopify app development",
-              "iOS development",
-              "macOS development"
+              "Liquid",
+              "Shopify API integrations"
+            ],
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Shopify theme development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Shopify app development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Shopify third-party API integrations"
+                }
+              }
             ]
           },
           {
             "@type": "WebSite",
+            "@id": "https://derekgeorge.org/#website",
             "url": "https://derekgeorge.org/",
             "name": "derekgeorge.org",
+            "inLanguage": "en-GB",
             "publisher": { "@id": "https://derekgeorge.org/#derek" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://derekgeorge.org/#webpage",
+            "url": "https://derekgeorge.org/",
+            "name": "Derek George — Shopify Theme & App Developer",
+            "inLanguage": "en-GB",
+            "dateModified": "2026-11-27",
+            "isPartOf": { "@id": "https://derekgeorge.org/#website" },
+            "mainEntity": { "@id": "https://derekgeorge.org/#derek" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://derekgeorge.org/#faq",
+            "url": "https://derekgeorge.org/",
+            "isPartOf": { "@id": "https://derekgeorge.org/#website" },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What Shopify work do you take on?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Custom Shopify themes, Shopify apps, and integrations that connect Shopify to third-party APIs and services."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I start a project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Email hello@derekgeorge.org with a little about your store and what you need."
+                }
+              }
+            ]
           }
         ]
       }
@@ -61,27 +132,61 @@
           <h1>Derek George</h1>
           <hr />
           <p>
-            Full-time <a href="#shopify">Shopify developer</a>. Part-time app
-            developer. AI enthusiast.
+            <strong>Shopify theme and app developer.</strong> I build custom
+            Shopify themes and apps, and connect stores to the services they
+            run on.
+          </p>
+          <p>
+            For enquiries, email
+            <a href="mailto:hello@derekgeorge.org">hello@derekgeorge.org</a>.
           </p>
         </section>
 
-        <section id="shopify">
-          <span class="eyebrow" aria-hidden="true">// shopify-work</span>
-          <h2>Shopify Work</h2>
+        <section id="services">
+          <span class="eyebrow" aria-hidden="true">// what-i-build</span>
+          <h2>What I build</h2>
+          <hr />
+          <ul>
+            <li>
+              <strong>Custom Shopify themes</strong>, with sections and blocks
+              your team can edit in the theme editor.
+            </li>
+            <li>
+              <strong>Shopify apps</strong> that fill the gaps in what a store
+              can do.
+            </li>
+            <li>
+              <strong>Third-party integrations</strong> that connect Shopify to
+              the APIs and services a business already uses.
+            </li>
+          </ul>
+        </section>
+
+        <section id="about">
+          <span class="eyebrow" aria-hidden="true">// about</span>
+          <h2>About</h2>
           <hr />
           <p>
-            As a former WordPress developer, I have spent the past five years migrating those unfortunate
-            enough to still be on WordPress to Shopify. Building custom themes,
-            apps, and integrating all sorts of third-party APIs into
-            Shopify's ecosystem, ensuring clients have a smooth and enjoyable
-            experience on Shopify.
+            I'm Derek George, a Shopify theme and app developer. For the past
+            five years I've built custom themes, apps and integrations on
+            Shopify.
           </p>
+        </section>
+
+        <section id="faq">
+          <span class="eyebrow" aria-hidden="true">// faq</span>
+          <h2>Questions</h2>
+          <hr />
+          <h3>What Shopify work do you take on?</h3>
           <p>
-            See the work, or start a conversation about a project, at
-            <a href="https://wolfdev.co.uk" target="_blank" rel="noopener"
-              >wolfdev.co.uk</a
-            >.
+            Custom Shopify themes, Shopify apps, and integrations that connect
+            Shopify to third-party APIs and services.
+          </p>
+          <h3>How do I start a project?</h3>
+          <p>
+            Email
+            <a href="mailto:hello@derekgeorge.org">hello@derekgeorge.org</a>
+            with a little about your store and what you need.
           </p>
         </section>
 
@@ -90,9 +195,8 @@
           <h2>Get in touch</h2>
           <hr />
           <p>
-            For Shopify projects, custom builds, or agency inquiries, email me
-            at
-            <a href="mailto:derek@wolfdev.co.uk">derek@wolfdev.co.uk</a>.
+            For Shopify theme, app and integration enquiries, email
+            <a href="mailto:hello@derekgeorge.org">hello@derekgeorge.org</a>.
           </p>
         </section>
       </main>

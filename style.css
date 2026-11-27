@@ -93,6 +93,16 @@ h2 {
   margin: 0 0 1.25rem;
 }
 
+/* Question headings, such as the homepage FAQ. */
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+hr + h3 {
+  margin-top: 0;
+}
+
 p {
   color: var(--muted);
   margin: 0 0 1rem;
